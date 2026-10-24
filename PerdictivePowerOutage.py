@@ -15,9 +15,9 @@ def run_app():
     if "step" not in st.session_state:
         st.session_state.step = 1
 
-    if st.session_state.step == 2:
-        buttonslot2.button("Tap to begin.", on_click=go_to_next_step)  
     if st.session_state.step == 1:
+        buttonslot2.button("Tap to begin.", on_click=go_to_next_step)  
+    if st.session_state.step == 2:
         number = st.number_input("Insert a number")
         st.write("The current number is ", number)  
 
