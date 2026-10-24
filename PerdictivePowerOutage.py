@@ -15,11 +15,16 @@ def run_app():
     if "step" not in st.session_state:
         st.session_state.step = 1
 
+    if "items_to_send_to_agent" not in st.session_state:    
+        st.session_state.location = 000000
+
     if st.session_state.step == 1:
         buttonslot2.button("Tap to begin.", on_click=go_to_next_step)  
     if st.session_state.step == 2:
-        number = st.number_input("Insert a number")
-        st.write("The current number is ", number)  
+        st.session_state.location = st.number_input("Insert a number")
+
+    if st.session_state.step == 3:
+        st.write("The current number is ", st.session_state.location)  
 
 def display_input(): 
     number = st.number_input("Insert a number")
