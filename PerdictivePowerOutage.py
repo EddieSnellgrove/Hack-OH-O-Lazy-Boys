@@ -1,6 +1,6 @@
 import streamlit as st
 def run_app():
-    s = st.text_input()
+    st.text_input()
     st.button(on_click=submit(s))
 
 def submit(s):
