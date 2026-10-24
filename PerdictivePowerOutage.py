@@ -1,9 +1,9 @@
 import streamlit as st
 def run_app():
-    st.button(on_click=submit())
-
+    print("testing")
+    
 def submit():
-    print("pie")
+    print("testing")
     
     
 if __name__ == "__main__":
