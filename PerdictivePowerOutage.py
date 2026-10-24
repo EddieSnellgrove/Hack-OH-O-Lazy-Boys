@@ -16,16 +16,26 @@ def run_app():
         st.session_state.step = 1
 
     if "items_to_send_to_agent" not in st.session_state:    
-        st.session_state.location = 000000
+        st.session_state.location = 0
 
-    if st.session_state.step == 1:
-        buttonslot2.button("Tap to begin.", on_click=go_to_next_step)  
-    if st.session_state.step == 2:
-        st.session_state.location = st.number_input("Insert a number")
+  # Initialize step if it doesn't exist
+if "step" not in st.session_state:
+    st.session_state.step = 1
+
+buttonslot2 = st.empty()
+
+if st.session_state.step == 1:
+    if buttonslot2.button("Tap to begin."):
         go_to_next_step()
 
-    if st.session_state.step == 3:
-        st.write("The current number is ", st.session_state.location)  
+if st.session_state.step == 2:
+    st.session_state.location = st.number_input("Insert a number", key="num_input")
+    
+    if st.button("Next"):
+        go_to_next_step()
+
+if st.session_state.step == 3:
+    st.write("The current number is ", st.session_state.location)
 
 def display_input(): 
     number = st.number_input("Insert a number")
