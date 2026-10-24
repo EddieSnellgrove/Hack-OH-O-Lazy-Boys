@@ -19,8 +19,8 @@ time_column = 'Report_Tim'
 
 if time_column in gdf.columns:
     # Filter down to only what you care about
-    outage_data = gdf[[time_column, 'latitude_calc', 'longitude_calc', ]].copy()
-    outage_data.columns = ['report_time', 'latitude', 'longitude']
+    outage_data = gdf[[time_column, 'latitude_calc', 'longitude_calc', 'Circuit', ]].copy()
+    outage_data.columns = ['report_time', 'latitude', 'longitude', 'circuit']
     
     # Clean up dates and drop missing rows
     outage_data['report_time'] = gpd.pd.to_datetime(outage_data['report_time'])
