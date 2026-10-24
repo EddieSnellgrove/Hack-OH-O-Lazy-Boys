@@ -27,7 +27,7 @@ def run_app():
         buttonslot1.button("Tap to begin.", on_click=go_to_next_step)
 
     if st.session_state.step == 2:
-        st.session_state.location = st.number_input("Insert a number", key="num_input")
+        st.session_state.location = buttonslot2.number_input("Insert a number", key="num_input")
         
         buttonslot2.button("Next", on_click=go_to_next_step)
 
