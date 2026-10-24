@@ -22,7 +22,7 @@ def run_app():
 
     elif st.session_state.step == 2:
         with col1:
-            st.session_state.location = st.number_input("Insert a number", key="num_input")
+            st.session_state.location = st.number_input("Insert a number", key="num_input", step=1)
         
         with col2:
             if st.button("Next"):
