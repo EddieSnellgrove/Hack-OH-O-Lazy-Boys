@@ -21,7 +21,8 @@ def run_app():
 def go_to_next_step(user_answer = ""):
     match st.session_state.step:
         case 1:
-            print("testing")
+            number = st.number_input("Insert a number")
+            st.write("The current number is ", number)
     st.session_state.step += 1
 
 def submit():
