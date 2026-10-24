@@ -22,6 +22,7 @@ def run_app():
         buttonslot2.button("Tap to begin.", on_click=go_to_next_step)  
     if st.session_state.step == 2:
         st.session_state.location = st.number_input("Insert a number")
+        go_to_next_step()
 
     if st.session_state.step == 3:
         st.write("The current number is ", st.session_state.location)  
