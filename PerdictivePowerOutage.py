@@ -1,10 +1,9 @@
 import streamlit as st
 def run_app():
-    st.text_input()
-    st.button(on_click=submit(s))
+    st.button(on_click=submit())
 
-def submit(s):
-    print(s)
+def submit():
+    print("pie")
     
     
 if __name__ == "__main__":
