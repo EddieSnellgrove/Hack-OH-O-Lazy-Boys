@@ -16,14 +16,19 @@ def run_app():
         st.session_state.step = 1
 
     if st.session_state.step == 1:
-        buttonslot2.button("Tap to begin.", on_click=go_to_next_step)   
+        buttonslot2.button("Tap to begin.", on_click=go_to_next_step)  
+    if st.session_state.step == 2:
+        number = st.number_input("Insert a number")
+        st.write("The current number is ", number)
+
+
     
 def go_to_next_step(user_answer = ""):
     match st.session_state.step:
         case 1:
             number = st.number_input("Insert a number")
             st.write("The current number is ", number)
-    #st.session_state.step += 1
+    st.session_state.step += 1
 
 def submit():
     print("testing")
